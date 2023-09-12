@@ -42,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13EC15862AAF65290020F0F0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				13F38A552AADEA8100519804 /* SettingView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		13F38A302AADE3CD00519804 = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +90,9 @@
 			children = (
 				13F38A3E2AADE3CD00519804 /* ContentView.swift */,
 				13F38A532AADE83500519804 /* ProfileView.swift */,
-				13F38A552AADEA8100519804 /* SettingView.swift */,
 				13F38A4E2AADE80F00519804 /* HomeView.swift */,
 				13F38A502AADE81500519804 /* ChatView.swift */,
+				13EC15862AAF65290020F0F0 /* Settings */,
 			);
 			path = View;
 			sourceTree = "<group>";

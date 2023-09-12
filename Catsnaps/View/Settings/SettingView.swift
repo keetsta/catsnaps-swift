@@ -15,10 +15,14 @@ struct SettingView: View {
                 TitleView()
                 
                 HStack {
-                    AccountSectionView()
-                        .padding(.leading)
-                    PrivacySectionView()
-                        .padding(.trailing)
+                    NavigationLink(destination: EmptyView()) {
+                        AccountSectionView()
+                            .padding(.leading)
+                    }
+                    NavigationLink(destination: EmptyView()) { // TODO: fix blue tint & navtitle
+                        PrivacySectionView()
+                            .padding(.trailing)
+                    }
                 }
                 
                 AboutAppView()
@@ -202,7 +206,6 @@ struct AboutAppView: View {
                 count += 1
                 
                 if count == 10 {
-                    print("asdas")
                     showToast.toggle()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
