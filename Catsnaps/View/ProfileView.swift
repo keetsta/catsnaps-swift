@@ -12,19 +12,18 @@ struct ProfileView: View {
         NavigationStack {
             VStack {
                 Text("idk")
-                    .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .topBarLeading) {
                             VStack {
                                 Text("Profile")
                                     .font(.system(size: 24, weight: .bold, design: .rounded))
-                                  .foregroundColor(Color.black)
+                                    .foregroundColor(Color.black)
                             }
                         }
                         
                         ToolbarItem(placement: .topBarTrailing) {
                             NavigationLink(destination: SettingView()) {
-                                Image(systemName: "gear")
+                                Image("gear")
                                     .foregroundStyle(.black)
                             }
                         }

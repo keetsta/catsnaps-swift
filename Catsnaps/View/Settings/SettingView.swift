@@ -15,14 +15,10 @@ struct SettingView: View {
                 TitleView()
                 
                 HStack {
-                    NavigationLink(destination: EmptyView()) {
-                        AccountSectionView()
-                            .padding(.leading)
-                    }
-                    NavigationLink(destination: EmptyView()) { // TODO: fix blue tint & navtitle
-                        PrivacySectionView()
-                            .padding(.trailing)
-                    }
+                    AccountSectionView()
+                        .padding(.leading)
+                    PrivacySectionView()
+                        .padding(.trailing)
                 }
                 
                 AboutAppView()
@@ -36,13 +32,25 @@ struct SettingView: View {
 }
 
 struct TitleView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack {
             HStack() {
                 Text("Settings")
                     .padding()
                     .font(.system(size: 36, weight: .light, design: .rounded))
+                    .navigationBarBackButtonHidden(true)
                     .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button {
+                                dismiss()
+                            } label: {
+                                Label("profile", systemImage: "arrow.left")
+                                    .labelStyle(.iconOnly)
+                            }
+                        }
+                        
                         ToolbarItem(placement: .topBarTrailing) {
                             Button {
                                 print("there is no spoon")
